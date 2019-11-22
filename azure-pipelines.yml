@@ -25,3 +25,9 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+ -task: CopyPublishBuildArtifacts@1
+      inputs:
+        Contents: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'DotnetCore3141'
+        ArtifactType: 'Container'
